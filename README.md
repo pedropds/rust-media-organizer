@@ -1,2 +1,2 @@
-# rust-medoa-organizer
+# rust-media-organizer
 MediaOrganizer developed using Rust. 
