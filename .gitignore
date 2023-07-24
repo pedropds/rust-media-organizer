@@ -1,0 +1,15 @@
+# Compiled files
+/target/
+Cargo.lock
+
+# Generated documentation
+/target/doc/
+
+# Editor/IDE specific files
+.idea/
+.vscode/
+*.rs.bak
+
+# OS-specific files
+.DS_Store
+Thumbs.db
