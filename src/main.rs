@@ -7,6 +7,8 @@ extern crate dotenv_codegen;
 use notify::{Result};
 
 //global variables
+const ORGANIZE_AT_STARTUP: &str = dotenv!("ORGANIZE_AT_STARTUP");
+
 const WATCH_FOLDER_PATH: &str = dotenv!("WATCH_FOLDER_PATH");
 const IMAGE_FILE_EXTENSIONS: &str = dotenv!("IMAGE_FILE_EXTENSIONS");
 const VIDEO_FILE_EXTENSIONS: &str = dotenv!("VIDEO_FILE_EXTENSIONS");
@@ -20,6 +22,14 @@ const DOCUMENT_FOLDER_PATH: &str = dotenv!("DOCUMENT_FOLDER_PATH");
 
 fn main() -> Result<()> {
     verify_env_variables();
+
+    let organize_at_startup: bool = ORGANIZE_AT_STARTUP.parse::<bool>().unwrap();
+
+    if organize_at_startup {
+        println!("Organizing download folder at startup");
+        filesystem::organize_download_folder();
+    }
+
     println!("Watching folder: {}", WATCH_FOLDER_PATH);
     file_watcher::watch()
 }
