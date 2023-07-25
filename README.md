@@ -95,7 +95,7 @@ Downloads/
     ├── image1.jpg
     ├── video1.mp4
     ├── document1.pdf
-	├── audio1.mp3
+    ├── audio1.mp3
     ├── random_file.txt
     └── image2.png  <- New file added
 ```
@@ -107,3 +107,7 @@ Images/
 ```
 
 This process will be continuous, ensuring that any new files added to the "Downloads" folder are automatically organized into their respective folders based on their file types. This helps maintain an organized and clutter-free "Downloads" folder over time.
+
+## Update - Cleanup the watch folder at startup
+
+The project has been enhanced to include a new feature called the "Startup Clean Option." With this option, users can now initiate a one-time cleanup of the "Downloads" folder at the startup of the script, based on the `ORGANIZE_AT_STARTUP` flag specified in the configuration.

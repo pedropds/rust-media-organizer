@@ -23,7 +23,8 @@ const DOCUMENT_FOLDER_PATH: &str = dotenv!("DOCUMENT_FOLDER_PATH");
 fn main() -> Result<()> {
     verify_env_variables();
 
-    let organize_at_startup: bool = ORGANIZE_AT_STARTUP.parse::<bool>().unwrap();
+    let organize_at_startup: bool = if ORGANIZE_AT_STARTUP.is_empty() { false }
+        else { ORGANIZE_AT_STARTUP.parse::<bool>().unwrap() };
 
     if organize_at_startup {
         println!("Organizing download folder at startup");
